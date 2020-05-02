@@ -14,6 +14,9 @@
     <link rel="stylesheet"
           href="style.css">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
     <title>Dungeon Escape</title>
 </head>
 
@@ -21,7 +24,8 @@
 
 <nav class="navbar navbar-dark bg-dark mb-3 header">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand"
+           href="#">
             Dungeon Escape
         </a>
     </div>
@@ -30,27 +34,48 @@
 <div class="container content">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="jumbotron py-4 mb-3">
+            <p class="text-center mb-3">
+                <small>A simple text adventure game with branching narrative.</small>
+            </p>
+
+            <button id="play"
+                    class="text-center py-5 mb-3 btn btn-dark w-100">
+                <span class="fas fa-3x fa-play-circle"></span>
+            </button>
+
+            <div class="jumbotron py-4 mb-5 d-none"
+                 id="text-adventure">
                 <figure>
                     <img
-                        class="d-block img-fluid mx-auto"
-                        src="http://placehold.it/500x300"
+                            id="text-adventure__image"
+                            class="d-block img-fluid mx-auto"
+                            src="http://placehold.it/500x300"
                     />
-                    <figcaption class="text-center small text-muted font-italic">Image caption goes here</figcaption>
+
+                    <figcaption
+                            id="text-adventure__image-caption"
+                            class="text-center small text-muted font-italic"
+                    >
+                        Image caption goes here
+                    </figcaption>
                 </figure>
 
-                <p>
+                <p id="text-adventure__text">
                     Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone
                     mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque
                     interloper chantey doubloon starboard grog black jack gangway rutters.
                 </p>
 
-                <button class="btn d-block w-100 btn-primary mb-2">Choice A</button>
-                <button class="btn d-block w-100 btn-primary mb-2">Choice B</button>
-                <button class="btn d-block w-100 btn-primary mb-2">Choice C</button>
-            </div>
+                <button
+                        id="text-adventure__choice-template"
+                        class="btn d-none w-100 btn-primary mb-2"
+                >
+                    Choice
+                </button>
 
-            <p class="text-center mb-5"><small>A simple text adventure game with branching narrative.</small></p>
+                <div id="text-adventure__choice-container">
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -61,14 +86,7 @@
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+<script src="scripts/index.js"
+        type="module"></script>
 </body>
 </html>
