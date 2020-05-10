@@ -1,9 +1,16 @@
 function displayEntry (entry) {
   const image = document.getElementById('text-adventure__image');
-  image.setAttribute('src', entry.image);
+  if (entry.image) {
+    image.setAttribute('src', entry.image);
+    image.classList.remove('d-none');
+    image.classList.add('d-block');
+  } else {
+    image.classList.add('d-none');
+    image.classList.remove('d-block');
+  }
 
   const caption = document.getElementById('text-adventure__image-caption');
-  caption.hidden = entry.imageCaption;
+  caption.hidden = !entry.imageCaption;
   caption.innerText = entry.imageCaption;
 
   const text = document.getElementById('text-adventure__text');
@@ -12,6 +19,7 @@ function displayEntry (entry) {
   const choiceContainer = document.getElementById('text-adventure__choice-container');
   choiceContainer.innerHTML = '';
 
+  if (!entry.choices) return;
   const choiceEl = document.getElementById('text-adventure__choice-template');
   entry.choices.forEach((choiceData) => {
     const newChoice = choiceEl.cloneNode(false);
